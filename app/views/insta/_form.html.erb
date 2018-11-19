@@ -1,0 +1,7 @@
+<%= form_for(@photo, url: choose_edit_or_new) do |f| %>
+  <%= f.label :"画像" %>
+  <%= f.file_field :content, class: 'btn btn-info' %>
+  <%= f.hidden_field :content_cache %>
+
+  <%= f.submit "投稿する", class: 'btn btn-primary' %>
+<% end %>
