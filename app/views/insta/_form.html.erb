@@ -1,7 +1,18 @@
+<input id="lefile" type="file" style="display:none">
+<div class="input-group">
+<input type="text" id="photoCover" class="form-control" placeholder="select file...">
+<span class="input-group-btn"><button type="button" class="btn btn-info" onclick="$('input[id=lefile]').click();">Browse</button></span>
+</div>
+
+<script>
+$('input[id=lefile]').change(function() {
+  $('#photoCover').val($(this).val().replace("C:\\fakepath\\", ""));
+});
+</script>
 <%= form_for(@photo, url: choose_edit_or_new) do |f| %>
-  <%= f.label :"画像" %>
-  <%= f.file_field :content, class: 'btn btn-info' %>
-  <%= f.hidden_field :content_cache %>
+
+  <%= f.file_field :content, style: "display: none", id:"lefile" %>
+  <%= f.hidden_field :content_cache %><br><br>
 
   <%= f.submit "投稿する", class: 'btn btn-primary' %>
 <% end %>

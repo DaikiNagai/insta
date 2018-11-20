@@ -6,4 +6,5 @@ module InstaHelper
       instum_path
     end
   end
+
 end

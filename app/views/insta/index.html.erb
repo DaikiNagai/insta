@@ -4,10 +4,16 @@
     <% @photos.each do |photo| %>
     <% user = User.find(photo.user_id) %>
     <div class="row">
-      <%= user.name %>
+      <%= profile_img(user) if profile_img(user) %>
+      <% if user.name? %>
+        <%= user.name %>
+      <% else %>
+        <%= user.email %>
+      <% end %>
       <%= image_tag photo.content.to_s %>
       <%= link_to "編集", edit_instum_path(photo.id), class: 'btn btn-default btn-success' %>
       <%= link_to "削除", instum_path(photo.id), method: :delete, data:{confirm: "本当に削除していいですか？"}, class: 'btn btn-danger btn-default' %>
+      <br><br>
     </div>
     <% end %>
     <%= link_to "投稿画面へ", new_instum_path, class: 'btn btn-primary' %>

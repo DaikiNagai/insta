@@ -13,6 +13,12 @@
  *= require_tree .
  *= require_self
  */
+@@import "bootstrap-fileinput";
+
+#title{
+  font-family: cursive;
+}
+
  .navbar {
    background-color: #360c0c;
  }
@@ -143,7 +149,12 @@
    background-color: #360c0c;
    color: white;
    text-align: center;
-   position: fixed;
-   bottom: 0px;
+   margin-top: auto;
    width: 100%;
+ }
+ body,
+ #wrapper{
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
  }

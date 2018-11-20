@@ -12,4 +12,12 @@ module ApplicationHelper
       image_tag(img_url, alt: user.name)
     end
   end
+
+  def name_email
+    if current_user.name?
+      name = current_user.name
+    else
+      name = current_user.email
+    end
+  end
 end

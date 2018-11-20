@@ -86,3 +86,9 @@ gem 'dotenv-rails'
 gem 'jquery-turbolinks'
 
 gem 'jquery-rails'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-bootstrap-fileinput', '~> 2.5.0'
+end
+
+gem 'jquery-turbolinks'
