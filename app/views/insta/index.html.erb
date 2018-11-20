@@ -2,7 +2,9 @@
   <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
     <p class="flash"><%= notice %><%= alert %></p>
     <% @photos.each do |photo| %>
+    <% user = User.find(photo.user_id) %>
     <div class="row">
+      <%= user.name %>
       <%= image_tag photo.content.to_s %>
       <%= link_to "編集", edit_instum_path(photo.id), class: 'btn btn-default btn-success' %>
       <%= link_to "削除", instum_path(photo.id), method: :delete, data:{confirm: "本当に削除していいですか？"}, class: 'btn btn-danger btn-default' %>
