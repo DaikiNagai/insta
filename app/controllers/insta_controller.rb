@@ -1,4 +1,5 @@
 class InstaController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_insta, only:[:edit, :destroy, :update]
   def index
     @photos = Photo.all
