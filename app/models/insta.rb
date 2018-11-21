@@ -1,2 +1,2 @@
-class Insta < ApplicationRecord
+module Insta < ApplicationRecord
 end
