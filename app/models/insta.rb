@@ -1,2 +1,0 @@
-module Insta < ApplicationRecord
-end
