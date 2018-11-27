@@ -30,3 +30,4 @@
 .env
 
 /vender/bundle
+/public/uploads
